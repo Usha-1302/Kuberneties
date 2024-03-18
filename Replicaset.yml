@@ -1,0 +1,21 @@
+apiVersion: apps/v1 
+kind: ReplicaSet    
+metadata: 
+  name: nginx-replica11
+spec:
+  replicas: 3      
+  selector:
+    matchLabels:
+      tier: frontend
+      app-name: website
+  template:
+    metadata: 
+      labels:
+        tier: frontend
+        app-name: website
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80

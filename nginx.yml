@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: images-build
+  labels:
+   tier: backend
+   app-name: website
+spec:
+   containers:
+   - name: application-server
+     image: nginx:1.14.2
+     ports:
+       - containerPort: 80
+
+
+  
